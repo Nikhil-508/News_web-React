@@ -8,7 +8,8 @@ module.exports = {
     'plugin:react-hooks/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  parser: '@babel/eslint-parser',
+  parserOptions: { ecmaVersion: 2020, sourceType: 'module' },
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],
   rules: {
@@ -18,4 +19,4 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
-}
+};
