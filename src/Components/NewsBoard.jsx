@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useEffect } from "react";
-
 import NewsItem from "./NewsItem";
 
 
@@ -10,16 +9,13 @@ const NewsBoard = ({category}) => {
 
     useEffect(() => {
       
-        let url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=bb2d5e6802db4ae481017d443dc3879e`;
-        console.log(url, "urrllll");
+        let url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`;
         fetch(url)
           .then(response => response.json())
           .then(data => setArticles(data.articles))
           .catch(error => console.error('Error fetching data:', error));
       }, [category]);
       
-
-
   return (
     <div>
         <h2 className="text-center">Latest <span className="badge bg-danger my-2">News</span></h2>
